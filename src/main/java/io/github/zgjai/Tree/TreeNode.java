@@ -1,8 +1,8 @@
 package io.github.zgjai.Tree;
 
-import java.util.function.Function;
+import io.github.zgjai.Stack.MyStack;
 
-import LeetCode.Stack.MyStack;
+import java.util.function.Function;
 
 /**
  * Created by zhangguijiang on 2018/3/2.

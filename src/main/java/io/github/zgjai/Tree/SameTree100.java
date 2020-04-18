@@ -1,6 +1,6 @@
 package io.github.zgjai.Tree;
 
-import LeetCode.Stack.MyStack;
+import io.github.zgjai.Stack.MyStack;
 
 /**
  * Given two binary trees, write a function to check if they are the same or not.
