@@ -13,19 +13,9 @@ import java.util.List;
  */
 
 /**
- * 解题思路：
- * 两两合并，类似于归并的方式
+ * 解题思路： 两两合并，类似于归并的方式
  */
 public class MergekSortedLists23 {
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) {
             return null;
@@ -67,5 +57,14 @@ public class MergekSortedLists23 {
             p.next = l2;
         }
         return dummy.next;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

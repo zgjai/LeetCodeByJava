@@ -6,23 +6,14 @@ package io.github.zgjai.LinkedList;
 
 /**
  * Reverse a linked list from position m to n. Do it in-place and in one-pass.
- * 
+ * <p>
  * For example: Given 1->2->3->4->5->NULL, m = 2 and n = 4,
- * 
+ * <p>
  * return 1->4->3->2->5->NULL.
- * 
+ * <p>
  * Note: Given m, n satisfy the following condition: 1 ≤ m ≤ n ≤ length of list.
  */
 public class ReverseLinkedList92 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode reverseBetween(ListNode head, int m, int n) {
         if (head == null || head.next == null || m == n) {
@@ -43,6 +34,15 @@ public class ReverseLinkedList92 {
             then = start.next;
         }
         return dummy.next;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 
 }

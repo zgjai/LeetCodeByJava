@@ -2,12 +2,17 @@ package io.github.zgjai.LinkedList;
 
 /**
  * Created by zhangguijiang on 2017/9/14.
+ * <p>
+ * Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the
+ * original list.
+ * <p>
+ * For example, Given 1->2->3->3->4->4->5, return 1->2->5. Given 1->1->1->2->3, return 2->3.
  */
 
 /**
  * Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the
  * original list.
- * 
+ *
  * For example, Given 1->2->3->3->4->4->5, return 1->2->5. Given 1->1->1->2->3, return 2->3.
  */
 
@@ -16,15 +21,6 @@ package io.github.zgjai.LinkedList;
  * 采用双指针
  */
 public class RemoveDuplicates82 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode deleteDuplicates(ListNode head) {
         if (head == null || head.next == null) {
@@ -53,5 +49,14 @@ public class RemoveDuplicates82 {
             first.next = null;
         }
         return dummy;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

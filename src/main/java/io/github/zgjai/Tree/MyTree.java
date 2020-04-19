@@ -26,6 +26,25 @@ public class MyTree<T> {
         this.root = node;
     }
 
+    public static void main(String[] args) {
+        TreeNode<Integer> root = new TreeNode<>(1);
+        root.setLeft(2);
+        root.getLeft().setLeft(3);
+        root.getLeft().setRight(4);
+        root.setRight(5);
+        root.getRight().setLeft(6);
+        root.getRight().setRight(7);
+        root.getRight().getRight().setRight(8);
+        MyTree<Integer> tree = new MyTree<>(root);
+        System.out.println(tree.preOrderRecur(root));
+        System.out.println(tree.preOrderIteration(root));
+        System.out.println(tree.inOrderRecur(root));
+        System.out.println(tree.inOrderIteration(root));
+        System.out.println(tree.posOrderRecur(root));
+        System.out.println(tree.posOrderIteration(root));
+        System.out.println(tree.breadTraversal(root));
+    }
+
     public List<T> preOrderRecur(TreeNode<T> currNode) {
         List<T> result = new ArrayList<>();
         if (currNode == null) {
@@ -143,7 +162,7 @@ public class MyTree<T> {
                 queue.add(node.getRight());
             }
         }
-        for (int i = result.size()-1; i >= 0; i--) {
+        for (int i = result.size() - 1; i >= 0; i--) {
             if (result.get(i) == null) {
                 result.remove(i);
             } else {
@@ -151,24 +170,5 @@ public class MyTree<T> {
             }
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        TreeNode<Integer> root = new TreeNode<>(1);
-        root.setLeft(2);
-        root.getLeft().setLeft(3);
-        root.getLeft().setRight(4);
-        root.setRight(5);
-        root.getRight().setLeft(6);
-        root.getRight().setRight(7);
-        root.getRight().getRight().setRight(8);
-        MyTree<Integer> tree = new MyTree<>(root);
-        System.out.println(tree.preOrderRecur(root));
-        System.out.println(tree.preOrderIteration(root));
-        System.out.println(tree.inOrderRecur(root));
-        System.out.println(tree.inOrderIteration(root));
-        System.out.println(tree.posOrderRecur(root));
-        System.out.println(tree.posOrderIteration(root));
-        System.out.println(tree.breadTraversal(root));
     }
 }

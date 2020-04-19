@@ -9,15 +9,6 @@ package io.github.zgjai.LinkedList;
  * of the first two lists.
  */
 public class MergeTwoSortedLists21 {
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0), p = dummy;
         while (l1 != null && l2 != null) {
@@ -37,5 +28,14 @@ public class MergeTwoSortedLists21 {
             p.next = l2;
         }
         return dummy.next;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

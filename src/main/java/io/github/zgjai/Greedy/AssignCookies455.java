@@ -18,7 +18,7 @@ public class AssignCookies455 {
         Arrays.sort(g);
         Arrays.sort(s);
         int maxC = 0;
-        for (int i = 0, j = 0; i < g.length && j < s.length;) {
+        for (int i = 0, j = 0; i < g.length && j < s.length; ) {
             if (s[j] >= g[i]) {
                 maxC++;
                 i++;

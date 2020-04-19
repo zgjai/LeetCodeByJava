@@ -11,13 +11,13 @@ import java.util.Queue;
 /**
  * Median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value. So
  * the median is the mean of the two middle value.
- * 
+ * <p>
  * Examples: [2,3,4] , the median is 3
- * 
+ * <p>
  * [2,3], the median is (2 + 3) / 2 = 2.5
- * 
+ * <p>
  * Design a data structure that supports the following two operations:
- * 
+ * <p>
  * void addNum(int num) - Add a integer number from the data stream to the data structure. double findMedian() - Return
  * the median of all elements so far.
  */

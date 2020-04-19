@@ -4,7 +4,7 @@ import io.github.zgjai.Stack.MyStack;
 
 /**
  * Given two binary trees, write a function to check if they are the same or not.
- * 
+ * <p>
  * Two binary trees are considered the same if they are structurally identical and the nodes have the same value.
  */
 public class SameTree100 {

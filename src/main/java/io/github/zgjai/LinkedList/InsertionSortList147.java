@@ -2,6 +2,8 @@ package io.github.zgjai.LinkedList;
 
 /**
  * Created by zhangguijiang on 2017/9/14.
+ * <p>
+ * Sort a linked list using insertion sort.
  */
 
 /**
@@ -13,15 +15,6 @@ package io.github.zgjai.LinkedList;
  * 插入排序
  */
 public class InsertionSortList147 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode insertionSortList(ListNode head) {
         if (head == null || head.next == null) {
@@ -53,5 +46,14 @@ public class InsertionSortList147 {
             }
         }
         return dummy.next;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

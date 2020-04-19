@@ -2,11 +2,15 @@ package io.github.zgjai.LinkedList;
 
 /**
  * Created by zhangguijiang on 2017/9/28.
+ * <p>
+ * Given a linked list, determine if it has a cycle in it.
+ * <p>
+ * Follow up: Can you solve it without using extra space?
  */
 
 /**
  * Given a linked list, determine if it has a cycle in it.
- * 
+ *
  * Follow up: Can you solve it without using extra space?
  */
 
@@ -15,15 +19,6 @@ package io.github.zgjai.LinkedList;
  * 快慢指针法，如果两个指针有交汇，说明有环
  */
 public class LinkedListCycle {
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public boolean hasCycle(ListNode head) {
         if (head == null) {
             return false;
@@ -38,5 +33,14 @@ public class LinkedListCycle {
             fast = fast.next;
         }
         return false;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

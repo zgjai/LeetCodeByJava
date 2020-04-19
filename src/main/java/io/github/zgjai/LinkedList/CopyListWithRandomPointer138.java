@@ -2,12 +2,17 @@ package io.github.zgjai.LinkedList;
 
 /**
  * Created by zhangguijiang on 2017/9/28.
+ * <p>
+ * A linked list is given such that each node contains an additional random pointer which could point to any node in the
+ * list or null.
+ * <p>
+ * Return a deep copy of the list.
  */
 
 /**
  * A linked list is given such that each node contains an additional random pointer which could point to any node in the
  * list or null.
- * 
+ *
  * Return a deep copy of the list.
  */
 
@@ -16,15 +21,6 @@ package io.github.zgjai.LinkedList;
  * 在原始链表的基础上，添加每个节点的拷贝节点，比如 1->2 ,先构造成 1->1->2->2 的新链表，完成随机节点的拷贝后，再分割成两个链表
  */
 public class CopyListWithRandomPointer138 {
-    class RandomListNode {
-        int label;
-        RandomListNode next, random;
-
-        RandomListNode(int x) {
-            this.label = x;
-        }
-    }
-
     public RandomListNode copyRandomList(RandomListNode head) {
         if (head == null) {
             return null;
@@ -57,5 +53,14 @@ public class CopyListWithRandomPointer138 {
             copyCurr = copyCurr.next;
         }
         return dummy.next;
+    }
+
+    class RandomListNode {
+        int label;
+        RandomListNode next, random;
+
+        RandomListNode(int x) {
+            this.label = x;
+        }
     }
 }

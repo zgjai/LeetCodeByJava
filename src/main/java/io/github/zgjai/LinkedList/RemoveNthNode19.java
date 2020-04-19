@@ -2,16 +2,25 @@ package io.github.zgjai.LinkedList;
 
 /**
  * Created by zhangguijiang on 2017/9/13.
+ * <p>
+ * Given a linked list, remove the nth node from the end of list and return its head.
+ * <p>
+ * For example,
+ * <p>
+ * Given linked list: 1->2->3->4->5, and n = 2. After removing the second node from the end, the linked list becomes
+ * 1->2->3->5.
+ * <p>
+ * Note: Given n will always be valid. Try to do this in one pass.
  */
 
 /**
  * Given a linked list, remove the nth node from the end of list and return its head.
- * 
+ *
  * For example,
- * 
+ *
  * Given linked list: 1->2->3->4->5, and n = 2. After removing the second node from the end, the linked list becomes
  * 1->2->3->5.
- * 
+ *
  * Note: Given n will always be valid. Try to do this in one pass.
  */
 
@@ -20,15 +29,6 @@ package io.github.zgjai.LinkedList;
  * 快慢指针实现，保证当快指针到达链表尾时，慢指针的后继节点是待删除节点
  */
 public class RemoveNthNode19 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode first = new ListNode(0);
@@ -53,5 +53,14 @@ public class RemoveNthNode19 {
             return dummy.next;
         }
         return head;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

@@ -9,15 +9,6 @@ package io.github.zgjai.LinkedList;
  */
 public class SortList148 {
 
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
@@ -57,5 +48,14 @@ public class SortList148 {
             p.next = l2;
         }
         return dummy.next;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

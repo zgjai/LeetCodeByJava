@@ -2,11 +2,15 @@ package io.github.zgjai.LinkedList;
 
 /**
  * Created by zhangguijiang on 2017/9/27.
+ * <p>
+ * Given a singly linked list, determine if it is a palindrome.
+ * <p>
+ * Follow up: Could you do it in O(n) time and O(1) space?
  */
 
 /**
  * Given a singly linked list, determine if it is a palindrome.
- * 
+ *
  * Follow up: Could you do it in O(n) time and O(1) space?
  */
 
@@ -15,15 +19,6 @@ package io.github.zgjai.LinkedList;
  * 将整个链表从中间拆分为两个链表，并将后半部分反置，比较新的两个链表
  */
 public class Palindrome234 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public boolean isPalindrome(ListNode head) {
         if (head == null || head.next == null) {
@@ -61,5 +56,14 @@ public class Palindrome234 {
             l2 = l2.next;
         }
         return true;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

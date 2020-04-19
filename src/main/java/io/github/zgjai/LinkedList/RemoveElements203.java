@@ -2,11 +2,15 @@ package io.github.zgjai.LinkedList;
 
 /**
  * Created by zhangguijiang on 2017/9/13.
+ * <p>
+ * Remove all elements from a linked list of integers that have value val.
+ * <p>
+ * Example Given: 1 --> 2 --> 6 --> 3 --> 4 --> 5 --> 6, val = 6 Return: 1 --> 2 --> 3 --> 4 --> 5
  */
 
 /**
  * Remove all elements from a linked list of integers that have value val.
- * 
+ *
  * Example Given: 1 --> 2 --> 6 --> 3 --> 4 --> 5 --> 6, val = 6
  * Return: 1 --> 2 --> 3 --> 4 --> 5
  */
@@ -16,15 +20,6 @@ package io.github.zgjai.LinkedList;
  * 注意头节点可能会被删除
  */
 public class RemoveElements203 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode removeElements(ListNode head, int val) {
         ListNode dummy = null;
@@ -41,5 +36,14 @@ public class RemoveElements203 {
             iterator = iterator.next;
         }
         return dummy;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

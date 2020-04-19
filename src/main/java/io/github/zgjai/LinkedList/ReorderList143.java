@@ -2,13 +2,19 @@ package io.github.zgjai.LinkedList;
 
 /**
  * Created by zhangguijiang on 2017/9/27.
+ * <p>
+ * Given a singly linked list L: L0?L1?…?Ln-1?Ln, reorder it to: L0?Ln?L1?Ln-1?L2?Ln-2?…
+ * <p>
+ * You must do this in-place without altering the nodes' values.
+ * <p>
+ * For example, Given {1,2,3,4}, reorder it to {1,4,2,3}.
  */
 
 /**
  * Given a singly linked list L: L0?L1?…?Ln-1?Ln, reorder it to: L0?Ln?L1?Ln-1?L2?Ln-2?…
- * 
+ *
  * You must do this in-place without altering the nodes' values.
- * 
+ *
  * For example, Given {1,2,3,4}, reorder it to {1,4,2,3}.
  */
 
@@ -17,15 +23,6 @@ package io.github.zgjai.LinkedList;
  * 将链表拆分成奇偶链表，将偶链表反置，最后合并两个链表
  */
 public class ReorderList143 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public static void main(String[] args) {
         ReorderList143 reorder = new ReorderList143();
@@ -107,5 +104,14 @@ public class ReorderList143 {
             output[index] = Integer.parseInt(part);
         }
         return output;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

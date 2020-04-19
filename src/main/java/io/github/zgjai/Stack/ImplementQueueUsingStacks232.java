@@ -9,10 +9,10 @@ import java.util.List;
 
 /**
  * Implement the following operations of a queue using stacks.
- * 
+ * <p>
  * push(x) -- Push element x to the back of queue. pop() -- Removes the element from in front of queue. peek() -- Get
  * the front element. empty() -- Return whether the queue is empty.
- * 
+ * <p>
  * Notes: You must use only standard operations of a stack -- which means only push to top, peek/pop from top, size, and
  * is empty operations are valid. Depending on your language, stack may not be supported natively. You may simulate a
  * stack by using a list or deque (double-ended queue), as long as you use only standard operations of a stack. You may
@@ -27,12 +27,16 @@ public class ImplementQueueUsingStacks232 {
         backStack = new Stack<>();
     }
 
-    /** Push element x to the back of queue. */
+    /**
+     * Push element x to the back of queue.
+     */
     public void push(int x) {
-       stack.push(x);
+        stack.push(x);
     }
 
-    /** Removes the element from in front of queue and returns that element. */
+    /**
+     * Removes the element from in front of queue and returns that element.
+     */
     public int pop() {
         int x = 0;
         while (!stack.isEmpty()) {
@@ -48,7 +52,9 @@ public class ImplementQueueUsingStacks232 {
         return x;
     }
 
-    /** Get the front element. */
+    /**
+     * Get the front element.
+     */
     public int peek() {
         int x = 0;
         while (!stack.isEmpty()) {
@@ -61,7 +67,9 @@ public class ImplementQueueUsingStacks232 {
         return x;
     }
 
-    /** Returns whether the queue is empty. */
+    /**
+     * Returns whether the queue is empty.
+     */
     public boolean empty() {
         return stack.isEmpty();
     }

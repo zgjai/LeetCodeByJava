@@ -4,34 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.stream.Collectors;
 
 /**
  * Design a data structure that supports the following two operations:
- *
+ * <p>
  * void addWord(word) bool search(word) search(word) can search a literal word or a regular expression string containing
  * only letters a-z or .. A . means it can represent any one letter.
- *
+ * <p>
  * Example:
- *
- * addWord("bad")
- * addWord("dad")
- * addWord("mad")
- * search("pad") -> false
- * search("bad") -> true
- * search(".ad") -> true
+ * <p>
+ * addWord("bad") addWord("dad") addWord("mad") search("pad") -> false search("bad") -> true search(".ad") -> true
  * search("b..") -> true
  */
 public class AddandSearchWord_211 {
     private static class WordDictionary {
         TrieNode root;
 
-        /** Initialize your data structure here. */
+        /**
+         * Initialize your data structure here.
+         */
         public WordDictionary() {
             root = new TrieNode();
         }
 
-        /** Adds a word into the data structure. */
+        /**
+         * Adds a word into the data structure.
+         */
         public void addWord(String word) {
             TrieNode curNode = root;
             for (Character c : word.toCharArray()) {

@@ -10,15 +10,6 @@ package io.github.zgjai.LinkedList;
 
 public class ReverseLinkedList206 {
 
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode reverseList(ListNode head) {
         //return reverseIteratively(head);
         return reverseRecursively(head);
@@ -44,5 +35,14 @@ public class ReverseLinkedList206 {
         head.next.next = head;
         head.next = null;
         return p;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

@@ -9,16 +9,23 @@ import java.util.Stack;
 /**
  * Given a non-negative integer num represented as a string, remove k digits from the number so that the new number is
  * the smallest possible.
- * 
+ * <p>
  * Note: The length of num is less than 10002 and will be ≥ k. The given num does not contain any leading zero.
  */
 public class RemoveKDigits402 {
+
+    public static void main(String[] args) {
+        RemoveKDigits402 test = new RemoveKDigits402();
+        String result = test
+            .removeKdigits("123", 3);
+        System.out.println(result);
+    }
 
     public String removeKdigits(String num, int k) {
         Stack<String> stack = new Stack<>();
         int popCount = 0;
         for (int i = 0; i < num.length(); i++) {
-            String s = num.substring(i, i+1);
+            String s = num.substring(i, i + 1);
             while (!stack.isEmpty() && popCount < k && stack.peek().compareTo(s) > 0) {
                 popCount++;
                 stack.pop();
@@ -40,12 +47,5 @@ public class RemoveKDigits402 {
             newNum.insert(0, stack.pop());
         }
         return newNum.toString();
-    }
-
-    public static void main(String[] args) {
-        RemoveKDigits402 test = new RemoveKDigits402();
-        String result = test
-                .removeKdigits("123", 3);
-        System.out.println(result);
     }
 }
