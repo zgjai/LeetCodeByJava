@@ -8,7 +8,7 @@ import io.github.zgjai.Stack.MyStack;
  * Two binary trees are considered the same if they are structurally identical and the nodes have the same value.
  */
 public class SameTree100 {
-    public boolean isSameTreeRecursion(TreeNode p, TreeNode q) {
+    public boolean isSameTreeRecursion(TreeNodeOld p, TreeNodeOld q) {
         if (p == null && q == null) {
             return true;
         } else if (p == null || q == null) {
@@ -25,17 +25,17 @@ public class SameTree100 {
         return isSame;
     }
 
-    public boolean isSameTreeIteration(TreeNode p, TreeNode q) {
-        MyStack<TreeNode> tmpStackP = new MyStack<>();
-        MyStack<TreeNode> tmpStackQ = new MyStack<>();
+    public boolean isSameTreeIteration(TreeNodeOld p, TreeNodeOld q) {
+        MyStack<TreeNodeOld> tmpStackP = new MyStack<>();
+        MyStack<TreeNodeOld> tmpStackQ = new MyStack<>();
         if (p == null || q == null) {
             return p == q;
         }
         tmpStackP.push(p);
         tmpStackQ.push(q);
         while (!tmpStackP.isEmpty() && !tmpStackQ.isEmpty()) {
-            TreeNode pRoot = tmpStackP.pop();
-            TreeNode qRoot = tmpStackQ.pop();
+            TreeNodeOld pRoot = tmpStackP.pop();
+            TreeNodeOld qRoot = tmpStackQ.pop();
             if (pRoot.val != qRoot.val) {
                 return false;
             }

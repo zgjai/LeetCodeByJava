@@ -1,123 +1,56 @@
 package io.github.zgjai.Tree;
 
-import io.github.zgjai.Stack.MyStack;
-
-import java.util.function.Function;
-
 /**
- * Created by zhangguijiang on 2018/3/2.
+ * @author guijiang.zhang
+ * @date 2020/4/18
  */
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+public class TreeNode<T> {
+    private T value;
+    private TreeNode<T> left;
+    private TreeNode<T> right;
 
-    TreeNode(int val) {
-        this.val = val;
+    public TreeNode(T data) {
+        this.value = data;
     }
 
-    // 深度优先遍历(DFS)
-    // 先序遍历
-    // 递归
-    public static void preOrderRecursion(TreeNode root, Function<TreeNode, Void> function) {
-        if (root == null) {
-            return;
-        }
-        function.apply(root);
-        preOrderRecursion(root.left, function);
-        preOrderRecursion(root.right, function);
+    public T getValue() {
+        return value;
     }
 
-    // 非递归
-    public static void preOrderIteration(TreeNode root, Function<TreeNode, Void> function) {
-        if (root == null) {
-            return;
-        }
-        MyStack<TreeNode> stack = new MyStack<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
-            TreeNode node = stack.pop();
-            function.apply(node);
-            if (node.right != null) {
-                stack.push(node.right);
-            }
-            if (node.left != null) {
-                stack.push(node.left);
-            }
-        }
+    public void setValue(T data) {
+        this.value = data;
     }
 
-    // 中序遍历
-    // 递归
-    public static void inOrderRecursion(TreeNode root, Function<TreeNode, Void> function) {
-        if (root == null) {
-            return;
-        }
-        inOrderRecursion(root.left, function);
-        function.apply(root);
-        inOrderRecursion(root.right, function);
+    public boolean hasLeft() {
+        return left != null;
     }
 
-    // 非递归
-    public static void inOrderIteration(TreeNode root, Function<TreeNode, Void> function) {
-        if (root == null) {
-            return;
-        }
-        MyStack<TreeNode> stack = new MyStack<>();
-        TreeNode node = root;
-        while (node != null || !stack.isEmpty()) {
-            if (node != null) {
-                stack.push(node);
-                node = node.left;
-            } else {
-                node = stack.pop();
-                function.apply(node);
-                node = node.right;
-            }
-        }
+    public TreeNode<T> getLeft() {
+        return left;
     }
 
-    // 后序遍历
-    // 递归
-    public static void postOrderRecursion(TreeNode root, Function<TreeNode, Void> function) {
-        if (root == null) {
-            return;
-        }
-        postOrderRecursion(root.left, function);
-        postOrderRecursion(root.right, function);
-        function.apply(root);
+    public void setLeft(T data) {
+        this.left = new TreeNode<>(data);
     }
 
-    // 非递归
-    public static void postOrderIteration(TreeNode root, Function<TreeNode, Void> function) {
-        if (root == null) {
-            return;
-        }
-        MyStack<TreeNode> stack = new MyStack<>();
-        MyStack<TreeNode> output = new MyStack<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
-            TreeNode node = stack.pop();
-            if (node.left != null) {
-                stack.push(node.left);
-            }
-            if (node.right != null) {
-                stack.push(node.right);
-            }
-            output.push(node);
-        }
-        while (!output.isEmpty()) {
-            function.apply(output.pop());
-        }
+    public void setLeft(TreeNode<T> left) {
+        this.left = left;
     }
 
-    // 广度优先遍历(BFS)，即层次遍历
-    // 非递归
-    public static void breadFirstIteration(TreeNode root, Function<TreeNode, Void> function) {
+    public boolean hasRight() {
+        return right != null;
     }
 
-    // 递归
-    public static void breadFirstRecursion(TreeNode root, Function<TreeNode, Void> function) {
-
+    public TreeNode<T> getRight() {
+        return right;
     }
+
+    public void setRight(T data) {
+        this.right = new TreeNode<>(data);
+    }
+
+    public void setRight(TreeNode<T> right) {
+        this.right = right;
+    }
+
 }

@@ -4,11 +4,11 @@ package io.github.zgjai.Tree;
  * Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
  */
 public class SymmetricTree {
-    public boolean isSymmetric(TreeNode root) {
+    public boolean isSymmetric(TreeNodeOld root) {
         return isMirror(root, root);
     }
 
-    private boolean isMirror(TreeNode t1, TreeNode t2) {
+    private boolean isMirror(TreeNodeOld t1, TreeNodeOld t2) {
         if (t1 == null || t2 == null) {
             return t1 == t2;
         }
