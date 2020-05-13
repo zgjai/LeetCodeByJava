@@ -50,7 +50,7 @@ public class MyTree<T> {
         if (currNode == null) {
             return result;
         }
-        result.add(currNode.getValue());
+        result.add(currNode.getVal());
         result.addAll(preOrderRecur(currNode.getLeft()));
         result.addAll(preOrderRecur(currNode.getRight()));
         return result;
@@ -62,7 +62,7 @@ public class MyTree<T> {
             return result;
         }
         result.addAll(inOrderRecur(currNode.getLeft()));
-        result.add(currNode.getValue());
+        result.add(currNode.getVal());
         result.addAll(inOrderRecur(currNode.getRight()));
         return result;
     }
@@ -74,7 +74,7 @@ public class MyTree<T> {
         }
         result.addAll(posOrderRecur(currNode.getLeft()));
         result.addAll(posOrderRecur(currNode.getRight()));
-        result.add(currNode.getValue());
+        result.add(currNode.getVal());
         return result;
     }
 
@@ -87,7 +87,7 @@ public class MyTree<T> {
         stack.push(currNode);
         while (!stack.isEmpty()) {
             currNode = stack.pop();
-            result.add(currNode.getValue());
+            result.add(currNode.getVal());
             if (currNode.hasRight()) {
                 stack.push(currNode.getRight());
             }
@@ -111,7 +111,7 @@ public class MyTree<T> {
                 node = node.getLeft();
             } else {
                 node = stack.pop();
-                result.add(node.getValue());
+                result.add(node.getVal());
                 node = node.getRight();
             }
         }
@@ -139,7 +139,7 @@ public class MyTree<T> {
         while (!output.isEmpty()) {
             node = output.pop();
             if (node != null) {
-                result.add(node.getValue());
+                result.add(node.getVal());
             }
         }
         return result;
@@ -157,7 +157,7 @@ public class MyTree<T> {
             if (node == null) {
                 result.add(null);
             } else {
-                result.add(node.getValue());
+                result.add(node.getVal());
                 queue.add(node.getLeft());
                 queue.add(node.getRight());
             }

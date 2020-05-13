@@ -5,20 +5,20 @@ package io.github.zgjai.Tree;
  * @date 2020/4/18
  */
 public class TreeNode<T> {
-    private T value;
-    private TreeNode<T> left;
-    private TreeNode<T> right;
+    public T val;
+    public TreeNode<T> left;
+    public TreeNode<T> right;
 
     public TreeNode(T data) {
-        this.value = data;
+        this.val = data;
     }
 
-    public T getValue() {
-        return value;
+    public T getVal() {
+        return val;
     }
 
-    public void setValue(T data) {
-        this.value = data;
+    public void setVal(T data) {
+        this.val = data;
     }
 
     public boolean hasLeft() {

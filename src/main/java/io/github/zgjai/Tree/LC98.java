@@ -1,5 +1,7 @@
 package io.github.zgjai.Tree;
 
+import java.util.List;
+
 /**
  * @author guijiang.zhang
  * @date 2020/4/16
@@ -33,5 +35,16 @@ public class LC98 {
      *      根节点的值为 5 ，但是其右子节点值为 4 。
      *
      */
+
+    public boolean isValidBST(TreeNode<Integer> root) {
+        MyTree<Integer> tree = new MyTree<>(root);
+        List<Integer> list = tree.inOrderRecur(root);
+        for (int i = 0; i < list.size() - 1; i++) {
+            if (list.get(i).compareTo(list.get(i + 1)) >= 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 }
