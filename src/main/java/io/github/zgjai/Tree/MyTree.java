@@ -153,10 +153,13 @@ public class MyTree<T> {
         Queue<TreeNode<T>> queue = new LinkedList<>();
         queue.add(currNode);
         while (!queue.isEmpty()) {
-            TreeNode<T> node = queue.poll();
-            if (node == null) {
-                result.add(null);
-            } else {
+            int len = queue.size();
+            for (int i = 0; i < len; i++) {
+                TreeNode<T> node = queue.poll();
+                if (node == null) {
+                    result.add(null);
+                    continue;
+                }
                 result.add(node.getVal());
                 queue.add(node.getLeft());
                 queue.add(node.getRight());

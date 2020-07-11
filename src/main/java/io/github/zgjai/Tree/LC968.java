@@ -19,6 +19,6 @@ public class LC968 {
      *
      */
     public int minCameraCover(TreeNode<Integer> root) {
-
+        return 0;
     }
 }

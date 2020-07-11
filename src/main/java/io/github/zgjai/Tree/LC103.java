@@ -1,9 +1,6 @@
 package io.github.zgjai.Tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * @author guijiang.zhang
@@ -21,22 +18,45 @@ public class LC103 {
      */
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode<Integer> root) {
-        List<List<Integer>> result = new ArrayList<>();
-        boolean fromHead = false;
+        return zigzagLevel(root);
+    }
 
+    private List<List<Integer>> zigzagLevel(TreeNode<Integer> currNode) {
+        List<List<Integer>> result = new LinkedList<>();
+        if (currNode == null) {
+            return result;
+        }
         Queue<TreeNode<Integer>> queue = new LinkedList<>();
-        queue.add(root);
-        queue.add(null);
+        queue.add(currNode);
+        boolean flag = false;
         while (!queue.isEmpty()) {
-            TreeNode<Integer> node = queue.poll();
-            if (node.left != null) {
+            int len = queue.size();
+            Deque<Integer> list = new LinkedList<>();
+            for (int i = 0; i < len; i++) {
+                TreeNode<Integer> node;
+                node = queue.poll();
+                if (node == null) {
+                    list.add(null);
+                    continue;
+                }
+                if (flag) {
+                    list.addFirst(node.val);
+                } else {
+                    list.addLast(node.val);
+                }
                 queue.add(node.left);
-            }
-            if (node.right != null) {
                 queue.add(node.right);
             }
+            flag = !flag;
+            while (list.size() > 0 && list.peekLast() == null) {
+                list.removeLast();
+            }
+            if (list.size() == 0) {
+                continue;
+            }
+            result.add(new ArrayList<>(list));
         }
-
         return result;
     }
+
 }

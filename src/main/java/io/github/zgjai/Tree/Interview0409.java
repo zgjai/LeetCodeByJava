@@ -1,5 +1,7 @@
 package io.github.zgjai.Tree;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -24,7 +26,35 @@ public class Interview0409 {
      * ]
      *
      */
+    private List<List<Integer>> result;
+
     public List<List<Integer>> BSTSequences(TreeNode<Integer> root) {
-        return null;
+        if (root == null) {
+            return new ArrayList<>();
+        }
+        List<TreeNode<Integer>> currLevel = new ArrayList<>();
+        currLevel.add(root);
+        LinkedList<Integer> track = new LinkedList<>();
+        backtrack(currLevel, track);
+        return result;
+    }
+
+    private void backtrack(List<TreeNode<Integer>> currLevel, LinkedList<Integer> track) {
+        if (currLevel.size() == 0) {
+            result.add(new ArrayList<>(track));
+            return;
+        }
+        List<TreeNode<Integer>> nextLevel = new ArrayList<>(currLevel);
+        for (TreeNode<Integer> curr : currLevel) {
+            track.add(curr.val);
+            nextLevel.remove(curr);
+            if (curr.left != null) { nextLevel.add(curr.left); }
+            if (curr.right != null) { nextLevel.add(curr.right); }
+            backtrack(nextLevel, track);
+            if (curr.left != null) { nextLevel.remove(curr.left); }
+            if (curr.right != null) { nextLevel.remove(curr.right); }
+            nextLevel.add(curr);
+            track.removeLast();
+        }
     }
 }
